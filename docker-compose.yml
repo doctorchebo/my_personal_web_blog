@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:latest
+
+    command: --default-authentication-plugin=mysql_native_password
+
+    environment:
+      MYSQL_ROOT_PASSWORD: Jirafita0210
+      MYSQL_DATABASE: blog
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: Jirafita0210
+      MYSQL_TCP_PORT: 3307
+
+    ports:
+      - "3307:3307"
