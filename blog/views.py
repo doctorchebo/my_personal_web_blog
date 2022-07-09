@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User, Group
+from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import UserSerializer, GroupSerializer
-
+from .serializers import CategorySerializer, PostSerializer, UserSerializer, GroupSerializer
+from .models import Category, Post
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -20,3 +21,17 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticated] 
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = [permissions.IsAuthenticated] 
+
+
+def home(request):
+    return render(request, 'home.html')
