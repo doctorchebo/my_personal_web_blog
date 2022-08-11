@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import permissions
 from .serializers import CategorySerializer, PostSerializer, GroupSerializer
-from .models import Category, Post
+from .models import Category, Comment, Post
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
@@ -20,6 +20,11 @@ class PostViewSet(viewsets.ModelViewSet):
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = [permissions.IsAuthenticated] 
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [permissions.IsAuthenticated] 
 

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import Group
 from rest_framework import serializers
-from blog.models import Category, Post
+from blog.models import Category, Comment, Post
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -16,5 +16,11 @@ class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(many=True)
     class Meta:
         model = Post
-        fields = ["id", "title", "image", "content", "created_at", "category"]
+        fields = ["id", "title", "slug", "image_url", "content", "created_at", "category"]
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ["id", "author", "comment"]
+        
 
