@@ -14,6 +14,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(many=True)
+    lookup_field = 'slug'
     class Meta:
         model = Post
         fields = ["id", "title", "slug", "image_url", "content", "created_at", "category"]

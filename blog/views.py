@@ -17,6 +17,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticated] 
+    lookup_field = 'slug'
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
