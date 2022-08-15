@@ -16,7 +16,7 @@ class GroupViewSet(viewsets.ModelViewSet):
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticated] 
+    permission_classes = [permissions.AllowAny] 
     lookup_field = 'slug'
 
 class CategoryViewSet(viewsets.ModelViewSet):
