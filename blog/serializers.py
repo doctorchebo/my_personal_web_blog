@@ -12,16 +12,19 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = ["id", "name"]
 
-class PostSerializer(serializers.ModelSerializer):
-    category = CategorySerializer(many=True)
-    lookup_field = 'slug'
-    class Meta:
-        model = Post
-        fields = ["id", "title", "slug", "image_url", "content", "created_at", "category"]
-
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ["id", "author", "comment"]
+class PostSerializer(serializers.ModelSerializer):
+    category = CategorySerializer(many=True)
+    comments = CommentSerializer(many=True)
+    lookup_field = 'slug'
+    class Meta:
+        model = Post
+        fields = ["id", "title", "slug", "image_url", "content", "created_at", "category", "comments"]
+
+
+
         
 
