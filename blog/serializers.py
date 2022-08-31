@@ -13,9 +13,12 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ["id", "name"]
 
 class CommentSerializer(serializers.ModelSerializer):
+    author = serializers.SerializerMethodField()
     class Meta:
         model = Comment
         fields = ["id", "author", "comment"]
+    def get_author(self, comment: Comment):
+        return comment.author.email
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(many=True)
     comments = CommentSerializer(many=True)
