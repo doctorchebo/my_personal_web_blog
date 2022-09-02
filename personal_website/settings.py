@@ -155,6 +155,6 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS=['http://localhost:3000', 'http://localhost:3001', 'https://chebo.herokuapp.com' ]
+CORS_ALLOWED_ORIGINS=['http://localhost:3000', 'http://localhost:3001', 'https://chebo.herokuapp.com', 'http://chebo.herokuapp.com' ]
 
 AUTH_USER_MODEL = 'authentication.MyUser'
