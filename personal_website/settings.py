@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'personal_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
-        'USER': 'root',
-        'PASSWORD': 'Jirafit@0210',
-        'HOST': 'localhost',
+        'NAME': 'heroku_ea530538ff0d1bf',
+        'USER': 'bea7cdb62dda4f',
+        'PASSWORD': '54407eae',
+        'HOST': 'us-cdbr-east-06.cleardb.net',
         'PORT': '3306',
     }
 }
