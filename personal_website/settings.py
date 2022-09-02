@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'personal_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_ea530538ff0d1bf',
-        'USER': 'bea7cdb62dda4f',
-        'PASSWORD': '54407eae',
-        'HOST': 'us-cdbr-east-06.cleardb.net',
-        'PORT': '3306',
+        'NAME': 'dkqk67g9dj95d',
+        'USER': 'ijjebayjpekobf',
+        'PASSWORD': 'b7b0a64c63c7eff952d68133b91f7e7439ac3667421dcff99c575a3cd2fe80a3',
+        'HOST': 'ec2-52-5-110-35.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
