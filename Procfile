@@ -1,1 +1,1 @@
-web: waitress-serve --listen=$PORT personal_website.wsgi:application
+web: gunicorn personal_website.wsgi
